@@ -1,0 +1,195 @@
+/* ================== TABLE STYLING ================== */
+.table {
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+}
+
+.table th,
+.table td {
+  text-align: center !important;
+  vertical-align: middle;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+
+.title-container {
+  background: linear-gradient(90deg, #4e73df, #1cc88a);
+  /* gradient blu-verde */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* leggera ombra */
+}
+
+/* ================== CURSORE MANO ================== */
+.table th,
+.table tbody tr {
+  cursor: pointer;
+}
+
+/* ================== HOVER EFFECT RIGHE ================== */
+.table tbody tr {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+}
+
+.table tbody tr:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, #d0f0ff, #a0e0ff);
+}
+
+/* ================== HEADER ================== */
+.table thead th {
+  background-color: #1f2a38;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.table thead th i {
+  margin-left: 5px;
+  font-size: 0.85rem;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.table thead th:hover i {
+  transform: scale(1.3) rotate(15deg);
+  color: #00aaff;
+}
+
+/* ================== BADGES DINAMICI ================== */
+.badge-custom {
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  min-width: 60px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.badge-custom:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* BADGE COLOR GRADIENTE DINAMICO */
+.badge-low {
+  background: linear-gradient(45deg, #28a745, #7fdc55);
+  color: #fff;
+}
+
+.badge-medium {
+  background: linear-gradient(45deg, #ffc107, #ffec7f);
+  color: #000;
+}
+
+.badge-high {
+  background: linear-gradient(45deg, #dc3545, #ff7f7f);
+  color: #fff;
+}
+
+/* ================== PAGINATION ================== */
+.pagination .page-item .page-link {
+  border-radius: 0.5rem;
+  margin: 0 2px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.pagination .page-item.active .page-link {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  border-color: #0056b3;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pagination .page-link:hover {
+  background: linear-gradient(45deg, #0056b3, #003f7f);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ================== SEARCH BOX ================== */
+input.form-control {
+  border-radius: 2rem;
+  padding: 0.6rem 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+input.form-control:focus {
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  outline: none;
+  transform: scale(1.02);
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+
+  .table th,
+  .table td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .badge-custom {
+    min-width: 50px;
+    padding: 0.3em 0.5em;
+  }
+}
+
+/* ================== MODAL CENTRATO ================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  animation: fadeIn 0.3s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
